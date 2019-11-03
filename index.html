@@ -1,0 +1,528 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    
+    <!--====== Title ======-->
+    <title>Jeopardy Search Engine</title>
+    
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--====== Favicon Icon ======-->
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/png">
+        
+    <!--====== Slick CSS ======-->
+    <link rel="stylesheet" href="assets/css/slick.css">
+        
+    <!--====== Font Awesome CSS ======-->
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+        
+    <!--====== Line Icons CSS ======-->
+    <link rel="stylesheet" href="assets/css/LineIcons.css">
+        
+    <!--====== Animate CSS ======-->
+    <link rel="stylesheet" href="assets/css/animate.css">
+        
+    <!--====== Bootstrap CSS ======-->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    
+    <!--====== Default CSS ======-->
+    <link rel="stylesheet" href="assets/css/default.css">
+    
+    <!--====== Style CSS ======-->
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+</head>
+
+<body>
+   
+    <!--====== PRELOADER PART START ======-->
+
+    <div class="preloader">
+        <div class="loader">
+            <div class="ytp-spinner">
+                <div class="ytp-spinner-container">
+                    <div class="ytp-spinner-rotator">
+                        <div class="ytp-spinner-left">
+                            <div class="ytp-spinner-circle"></div>
+                        </div>
+                        <div class="ytp-spinner-right">
+                            <div class="ytp-spinner-circle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--====== PRELOADER PART ENDS ======-->
+    
+    <!--====== HEADER PART START ======-->
+    
+    <header class="header-area">
+        <div class="navbar-area headroom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <nav class="navbar navbar-expand-lg">
+                            
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                            </button>
+
+                            <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                                <ul id="nav" class="navbar-nav m-auto">
+                                    <li class="nav-item active">
+                                        <a href="index.html/#search">Search</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="index.html/#howtouse">How to Use</a>
+                                    </li>
+                                    
+                                    <li class="nav-item">
+                                        <a href="index.html/#contact">Contact</a>
+                                    </li>
+                                </ul>
+                            </div> <!-- navbar collapse -->
+                        </nav> <!-- navbar -->
+                    </div>
+                </div> <!-- row -->
+            </div> <!-- container -->
+        </div> <!-- navbar area -->
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<div id="search" class="container">
+    <div class="row pt-1 pb-1">
+        <div class="col-lg-12">
+            <h4 class="text-center">Jeopardy Search Engine</h4>
+        </div>
+    </div>
+</div>
+<section>
+    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://www.whats-on-netflix.com/wp-content/uploads/2019/06/collection-6-jeopardy-coming-to-netflix.jpg" class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    <!--====== SEARCH PART START ======-->
+</section>
+<section class="search-sec">
+    <div class="container"
+        <form action="#" method="post" novalidate="novalidate">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row">
+                        <div class="col-lg-5 col-md-3 col-sm-12 p-0">
+                            <input type="text" class="form-control search-slt" placeholder="Time Frame: YYYY-MM-DD/YYYY-MM-DD" id="dateTime">
+                        </div>
+                        <div class="col-lg-2 col-md-3 col-sm-12 p-0">
+                            <input type="text" class="form-control search-slt" placeholder="Trivia Category" id="category">
+                        </div>
+                        <div class="col-lg-2 col-md-3 col-sm-12 p-0">
+                            <input type="text" class="form-control search-slt" placeholder="Level of Difficulty" id="difficulty">
+                        </div>
+                        <div class="col-lg-2 col-md-3 col-sm-12 p-0">
+                            <input type="text" class="form-control search-slt" placeholder="Offset Results by" id="offset">
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-12 p-0">
+                            <button type="button" class="btn btn-danger wrn-btn" onclick="refineSearch();">Search</button>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-12 p-0">
+                                <button type="button" class="btn btn-danger wrn-btn" onclick="randomSearch();">Random</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+</header>
+    <!--====== SEARCH PART ENDS ======-->
+    
+    <!--====== DISPLAY PART STARTS ======-->
+    <section id="display" class="display-area pt-115">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-9">
+                        <div class="about-title text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s">
+                            <h6 class="welcome">SEARCH RESULTS</h6>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-12 p-0">
+                                <button type="button" class="btn btn-danger wrn-btn" onclick="clearSearch();">Clear Results</button>
+                        </div>
+                    </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="about-content pt-45">
+                                <p id="results"></p>
+                                <script>
+                                function clearSearch() {
+                                    document.getElementById("results").innerHTML = "";
+                                }
+                                function randomSearch() {
+                                    var xmlHttp = new XMLHttpRequest();
+                                    xmlHttp.open( "GET", "http://jservice.io/api/random", false ); // false for synchronous request
+                                    xmlHttp.send( null );
+                                    output = xmlHttp.responseText;
+                                    var n = output.indexOf("question");
+                                    n = n + 11;
+                                    var c = output.charAt(n);
+                                    while(c != ',') {
+                                        document.getElementById("results").innerHTML = document.getElementById("results").innerHTML + c;
+                                        n++;
+                                        c = output.charAt(n);
+                                    }
+                                }
+                                function catID() {
+                                    var catID = "";
+                                    var xmlHttp = new XMLHttpRequest();
+                                    xmlHttp.open( "GET", "http://jservice.io/api/clues", false ); // false for synchronous request
+                                    xmlHttp.send( null );
+                                    output = xmlHttp.responseText;
+                                    var n = output.indexOf(document.getElementById("category").value);
+                                    var c = output.charAt(n);
+                                    
+                                    while(c != ',') {
+                                         n--;
+                                         c = output.charAt(n);
+                                     }
+                                      var stop = n - 1;
+                                      while(c != ':') {
+                                          n--;
+                                          c = output.charAt(n);
+                                      }
+                                      n++;
+                                      while(c != ',') {
+                                          c = output.charAt(n);
+                                          catID = catID + c;
+                                          c = output.charAt(++n);
+                                      }
+                                      
+                                      return catID;
+                                     
+                                }
+                                
+                                function refineSearch() {
+                                    
+                                    // find date
+                                    dateString = document.getElementById("dateTime").value;
+                                    var n = dateString.indexOf('/');
+                                    var min = dateString.substring(0, n);
+                                    var max = dateString.substring(n + 1, dateString.length);
+                                    var minDate = new Date(min);
+                                    var maxDate = new Date(max);
+                                    
+                                    var cID = Number(catID());
+                                    var xmlHttp = new XMLHttpRequest();
+                                    xmlHttp.open( "GET", "http://jservice.io/api/clues?value=" + document.getElementById("difficulty").value + "&offset=" + document.getElementById("offset").value + "&category=" + cID + "min_date=" + minDate + "max_date=" +maxDate, false ); // false for synchronous request
+                                    xmlHttp.send( null );
+                                    output = xmlHttp.responseText;
+                                    var n = output.indexOf("question");
+                                    while(n != -1) {
+                                           n = n + 10;
+                                           var c = output.charAt(n);
+                                           while(c != ',') {
+                                               document.getElementById("results").innerHTML = document.getElementById("results").innerHTML + c;
+                                               n++;
+                                               c = output.charAt(n);
+                                           }
+                                          document.getElementById("results").innerHTML = document.getElementById("results").innerHTML + "; ";
+                                          output = output.substring(n, output.length - 1);
+                                          n = output.indexOf("question"); 
+                                      }
+                                }
+                                </script>
+                        </div> <!-- about content -->
+                    </div>
+                </div> <!-- row -->
+            </div> <!-- container -->
+        </section>
+    
+    <!--====== HOW TO USE PART START ======-->
+    
+    <section id="howtouse" class="howtouse pt-115">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-9">
+                    <div class="about-title text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s">
+                        <h6 class="welcome">HOW TO USE THIS SITE</h6>
+                        <h3 class="title"><span>An intuitive search engine </span> for all Jeopardy lovers.</h3>
+                    </div>
+                </div>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="about-content pt-45">
+                        <p class="text wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.4s">1. Use the Search feature to search for Jeopardy hints by date/time aired (either by day, week, or month), trivia category, level of difficulty, and the offset of results you would like shown. You can mix and match these criteria to refine your results as you want. If you want a random clue, just press the Random button!</p>
+                        <p class="text wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.4s">2. Press the "Clear Search" button to clear your current search results and search again.</p>
+                        <p class="text wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.4s">3. If you still have any questions, please use the "Contact" feature to ask me any questions and I will get back to you as soon as possible!</p>
+                        <p class="text wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.4s">4. Enjoy :)</p>
+                        <div class="about-counter pt-60">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="single-counter counter-color-1 mt-30 d-flex wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s">
+                                        <div class="counter-shape">
+                                            <span class="shape-1"></span>
+                                            <span class="shape-2"></span>
+                                        </div>
+                                        <div class="counter-content media-body">
+                                            <span class="counter-count"><span class="counter">156,800</span></span>
+                                            <p class="text">Trivia Questions</p>
+                                        </div>
+                                    </div> <!-- single counter -->
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="single-counter counter-color-2 mt-30 d-flex wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.6s">
+                                        <div class="counter-shape">
+                                            <span class="shape-1"></span>
+                                            <span class="shape-2"></span>
+                                        </div>
+                                        <div class="counter-content media-body">
+                                            <span class="counter-count"><span class="counter">99</span>%</span>
+                                            <p class="text">Satisfaction</p>
+                                        </div>
+                                    </div> <!-- single counter -->
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="single-counter counter-color-3 mt-30 d-flex wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.9s">
+                                        <div class="counter-shape">
+                                            <span class="shape-1"></span>
+                                            <span class="shape-2"></span>
+                                        </div>
+                                        <div class="counter-content media-body">
+                                            <span class="counter-count"><span class="counter">8,000</span></span>
+                                            <p class="text">Episodes Aired</p>
+                                        </div>
+                                    </div> <!-- single counter -->
+                                </div>
+                            </div> <!-- row -->
+                        </div> <!-- about counter -->
+                    </div> <!-- about content -->
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </section>
+    
+    <!--====== ABOUT PART ENDS ======-->
+    
+    <!--====== CONTACT PART START ======-->
+
+    <section id="contact" class="contact-area pt-120 pb-120">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-4">
+                    <div class="section-title text-center pb-20 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s">
+                        <h6 class="sub-title">My Contact</h6>
+                        <h4 class="title">Get In <span>Touch.</span></h4>
+                    </div> <!-- section title -->
+                </div>
+            </div> <!-- row -->
+            <div class="contact-info pt-30">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single-contact-info contact-color-1 mt-30 d-flex  wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s">
+                            <div class="contact-info-icon">
+                                <i class="lni-map-marker"></i>
+                            </div>
+                            <div class="contact-info-content media-body">
+                                <p class="text">UNC Chapel Hill <br> Chapel Hill, NC, USA</p>
+                            </div>
+                        </div> <!-- single contact info -->
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single-contact-info contact-color-2 mt-30 d-flex  wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.6s">
+                            <div class="contact-info-icon">
+                                <i class="lni-envelope"></i>
+                            </div>
+                            <div class="contact-info-content media-body">
+                                <p class="text">annaxu@live.unc.edu</p>
+                                <p class="text">thexuanna@gmail.com</p>
+                            </div>
+                        </div> <!-- single contact info -->
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single-contact-info contact-color-3 mt-30 d-flex  wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.9s">
+                            <div class="contact-info-icon">
+                                <i class="lni-phone"></i>
+                            </div>
+                            <div class="contact-info-content media-body">
+                                <p class="text">(919)-985-1988</p>
+                                <p class="text">Call me, beep me, if you wanna reach me</p>
+                            </div>
+                        </div> <!-- single contact info -->
+                    </div>
+                </div> <!-- row -->
+            </div> <!-- contact info -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="contact-wrapper-form pt-115  wow fadeInUpBig" data-wow-duration="1s" data-wow-delay="0.5s">
+                        <h4 class="contact-title pb-10"><i class="lni-envelope"></i> Leave <span>A Message.</span></h4>
+                        
+                        <form id="contact-form" action="assets/contact.php" method="post">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="contact-form mt-45">
+                                        <label>Enter Your Name</label>
+                                        <input type="text" name="name" placeholder="Full Name">
+                                    </div> <!-- contact-form -->
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="contact-form mt-45">
+                                        <label>Enter Your Email</label>
+                                        <input type="email" name="email" placeholder="Email">
+                                    </div> <!-- contact-form -->
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="contact-form mt-45">
+                                        <label>Your Message</label>
+                                        <textarea name="message" placeholder="Enter your message or question..."></textarea>
+                                    </div> <!-- contact-form -->
+                                </div>
+                                <p class="form-message"></p>
+                                <div class="col-md-12">
+                                    <div class="contact-form mt-45">
+                                        <button type="submit" class="main-btn">Send Now</button>
+                                    </div> <!-- contact-form -->
+                                </div>
+                            </div> <!-- row -->
+                        </form>
+                    </div> <!-- contact wrapper form -->
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </section>
+
+    <!--====== CONTACT PART ENDS ======-->
+    
+    <!--====== FOOTER PART START ======-->
+    
+    <footer id="footer" class="footer-area bg_cover" style="background-image: url(assets/images/footer-bg.jpg)">
+        <div class="container">
+            <div class="footer-widget pt-30 pb-70">
+                <div class="row">
+                    <div class="col-lg-3 col-sm-6 order-sm-1 order-lg-1">
+                        <div class="footer-about pt-40">
+                            
+                            <p class="text">This page was made for Capital One's Software Engineering Summit! I'm so glad I was able to take part in this opportunity and learn more about web development.</p> <p class="text">This page can be used by Jeopardy lovers worldwide to search for hints and answer them to test their knowledge. Enjoy!</p>
+                        </div> <!-- footer about -->
+                    </div>
+                    <div class="col-lg-3 col-sm-6 order-sm-3 order-lg-2">
+                        <div class="footer-link pt-40">
+                            <div class="footer-title">
+                                <h5 class="title">Services</h5>
+                            </div>
+                            <ul>
+                                <li><a href="#">Jeopardy Hint Search</a></li>
+                                <li><a href="#">Refining Search Results</a></li>
+                                <li><a href="#">Live Messaging Help</a></li>
+                                <li><a href="#">Web Development</a></li>
+                            </ul>
+                        </div> <!-- footer link -->
+                    </div>
+                    <div class="col-lg-3 col-sm-6 order-sm-4 order-lg-3">
+                        <div class="footer-link pt-40">
+                            <div class="footer-title">
+                                <h5 class="title">About Me</h5>
+                            </div>
+                            <ul>
+                                <li><a href="#">Sophomore at UNC Chapel Hill</a></li>
+                                <li><a href="#">CS and Business Double Major</a></li>
+                                <li><a href="#">Lover of Books and People</a></li>
+                                <li><a href="#">Tour Guide, COMP110 TA, Service Trip Leader </a></li>
+                            </ul>
+                        </div> <!-- footer link -->
+                    </div>
+                    <div class="col-lg-3 col-sm-6 order-sm-2 order-lg-4">
+                        <div class="footer-contact pt-40">
+                            <div class="footer-title">
+                                <h5 class="title">Contact Info</h5>
+                            </div>
+                            <div class="contact pt-10">
+                                <p class="text">UNC Chapel Hill </br>
+                                    NC, USA</p>
+                                <p class="text">annaxu@live.unc.edu</p>
+                                <p class="text">(919)-985-1988</p>
+
+                                <ul class="social mt-40">
+                                    <li><a href="#"><i class="lni-facebook"></i></a></li>
+                                    <li><a href="#"><i class="lni-twitter"></i></a></li>
+                                    <li><a href="#"><i class="lni-instagram"></i></a></li>
+                                    <li><a href="#"><i class="lni-linkedin"></i></a></li>
+                                </ul>
+                            </div> <!-- contact -->
+                        </div> <!-- footer contact -->
+                    </div>
+                </div> <!-- row -->
+        </div> <!-- container -->
+    </footer>
+    
+    <!--====== FOOTER PART ENDS ======-->
+    
+    <!--====== BACK TOP TOP PART START ======-->
+
+    <a href="#" class="back-to-top"><i class="lni-chevron-up"></i></a>
+
+    <!--====== BACK TOP TOP PART ENDS ======-->   
+    
+    
+    <!-- row -->
+
+
+    <!--====== Jquery js ======-->
+    <script src="assets/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="assets/js/vendor/modernizr-3.7.1.min.js"></script>
+    
+    <!--====== Bootstrap js ======-->
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    
+    <!--====== Plugins js ======-->
+    <script src="assets/js/plugins.js"></script>
+    
+    <!--====== Slick js ======-->
+    <script src="assets/js/slick.min.js"></script>
+    
+    
+    <!--====== Counter Up js ======-->
+    <script src="assets/js/waypoints.min.js"></script>
+    <script src="assets/js/jquery.counterup.min.js"></script>
+    
+    
+    <!--====== Appear js ======-->
+    <script src="assets/js/jquery.appear.min.js"></script>
+    
+    <!--====== WOW js ======-->
+    <script src="assets/js/wow.min.js"></script>
+    
+    <!--====== Headroom js ======-->
+    <script src="assets/js/headroom.min.js"></script>
+    
+    <!--====== Jquery Nav js ======-->
+    <script src="assets/js/jquery.nav.js"></script>
+     
+    <!--====== Scroll It js ======-->
+    <script src="assets/js/scrollIt.min.js"></script>
+    
+    <!--====== Main js ======-->
+    <script src="assets/js/main.js"></script>
+    
+</body>
+
+</html>
+
